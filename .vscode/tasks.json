@@ -1,0 +1,32 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "🔄 Compilar arquivos do playground (C++)",
+            "detail": "Compile todos os arquivos definidos na task.",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g",
+                // Arquivos compilados por padrão (não mexer, na boa ^_-)
+                    "main.cpp",
+                    "welcome/greet.cpp",
+                    "welcome/greet.h",
+
+                // Insira aqui os arquivos e cabeçalhos que serão carregados pelo arquivo main.cpp
+                    // "example.cpp",
+                    // "example.h",
+                    "scripts/arrays/reduce/sum_all.cpp",
+                    "scripts/arrays/reduce/sum_all.hpp",
+                
+                "-o",
+                "output/instance"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": []
+        }
+    ]
+}
