@@ -3,7 +3,9 @@
 
 Este repositório tem a finalidade de compreender melhor a linguagem **C++** e suas aplicações.
 
-Para isso, irei implementar diversas funções e objetos que realizarão diversas tarefas, seja desde um simples **reduce** à até um **backtracking**, e claro, a implementação de algoritmos vai ficando mais complexa a medida que compreendo melhor a linguagem (o que vai demorar um pouco pq to no básico kkk).## 🔌 Instalação e Execução
+Para isso, irei implementar diversas funções e objetos que realizarão diversas tarefas, seja desde um simples **reduce** à até um **backtracking**, e claro, a implementação de algoritmos vai ficando mais complexa a medida que compreendo melhor a linguagem (o que vai demorar um pouco pq to no básico kkk).
+
+## 🔌 Instalação e Execução
 Partindo do principio que você já tenha o `gcc` e o `g++` instalado, você pode pular esta parte do tutorial. Mas caso tenha duvidas de como instala-los, eu posso lhe ajudar!
 
 ---
@@ -37,10 +39,8 @@ Agora, para inseri-la na variável de ambiente:
 
 Caso reste duvidas se a instalação foi feita com sucesso, abra o prompt de comando do Windows e digite `g++`. Se aparecer a seguinte mensagem:
 
-\```
-    g++: fatal error: no input files
-    compilation terminated.
-\```
+`g++: fatal error: no input files`
+`compilation terminated.`
 
 Isso indica que o compilador foi instalado e já está funcionando 👍.
 
