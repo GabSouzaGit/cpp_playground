@@ -11,14 +11,12 @@
                 // Arquivos compilados por padrão (não mexer, na boa ^_-)
                     "main.cpp",
                     "welcome/greet.cpp",
-                    "welcome/greet.h",
+                    "welcome/greet.hpp",
 
                 // Insira aqui os arquivos e cabeçalhos que serão carregados pelo arquivo main.cpp
-                    // "example.cpp",
-                    // "example.h",
-                    "scripts/arrays/reduce/sum_all.cpp",
-                    "scripts/arrays/reduce/sum_all.hpp",
-                
+                    // "scripts/caminho/example.cpp",
+                    // "scripts/caminho/example.h",
+
                 "-o",
                 "output/instance"
             ],
@@ -26,7 +24,9 @@
                 "kind": "build",
                 "isDefault": false
             },
-            "problemMatcher": []
+            "problemMatcher": [
+                "$gcc"
+            ]
         }
     ]
 }
