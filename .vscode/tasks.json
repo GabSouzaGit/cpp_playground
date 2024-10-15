@@ -10,13 +10,12 @@
                 "-g",
                 // Arquivos compilados por padrão (não mexer, na boa ^_-)
                     "main.cpp",
-                    "welcome/greet.cpp",
-                    "welcome/greet.hpp",
+                    "greet.hpp",
 
                 // Insira aqui os arquivos e cabeçalhos que serão carregados pelo arquivo main.cpp
                     // "scripts/caminho/example.cpp",
-                    // "scripts/caminho/example.h",
-
+                    // "scripts/caminho/example.hpp",
+                    
                 "-o",
                 "output/instance"
             ],

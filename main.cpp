@@ -1,14 +1,13 @@
 #include <iostream>
-#include <string>
 
-#include "welcome/greet.hpp"
+#include "greet.hpp"
 
 using namespace std;
 
 int main(){
     greet();
-
-
+ 
+    // Codigo aqui !!! :)
 
     cin.ignore();
     return 0;
