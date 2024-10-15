@@ -67,33 +67,37 @@ Basicamente, esta task contém toda a estrutura do prompt para compilação já 
 A task está presente no diretório *.vscode*, em `tasks.json`:
 
 ```json
-    "tasks": [
-        {
-            "label": "🔄 Compilar arquivos do playground (C++)",
-            "detail": "Compile todos os arquivos definidos na task.",
-            "type": "shell",
-            "command": "g++",
-            "args": [
-                "-g",
-                // Arquivos compilados por padrão (não mexer, na boa ^_-)
-                    "main.cpp",
-                    "welcome/greet.cpp",
-                    "welcome/greet.h",
+    {
+        "version": "2.0.0",
+        "tasks": [
+            {
+                "label": "🔄 Compilar arquivos do playground (C++)",
+                "detail": "Compile todos os arquivos definidos na task.",
+                "type": "shell",
+                "command": "g++",
+                "args": [
+                    "-g",
+                    // Arquivos compilados por padrão (não mexer, na boa ^_-)
+                        "main.cpp",
+                        "greet.hpp",
 
-                // Insira aqui os arquivos e cabeçalhos que serão carregados pelo arquivo main.cpp
-                    // "caminho/example.cpp",
-                    // "caminho/example.h",
-                
-                "-o",
-                "output/instance"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": false
-            },
-            "problemMatcher": []
-        }
-    ]
+                    // Insira aqui os arquivos e cabeçalhos que serão carregados pelo arquivo main.cpp
+                        // "scripts/caminho/example.cpp",
+                        // "scripts/caminho/example.hpp",
+                        
+                    "-o",
+                    "output/instance"
+                ],
+                "group": {
+                    "kind": "build",
+                    "isDefault": false
+                },
+                "problemMatcher": [
+                    "$gcc"
+                ]
+            }
+        ]
+    }
 ```
 
 Para executar a task, pressione `Ctrl+Shift+B`, e proximo da barra de pesquisa do VSCode, clique na opção escrita **🔄 Compilar arquivos do playground (C++)**.
