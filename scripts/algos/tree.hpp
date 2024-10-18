@@ -1,7 +1,6 @@
 #ifndef TREE_HPP
     #define TREE_HPP
 
-    #include <iostream>
     #include <string>
 
     using namespace std;

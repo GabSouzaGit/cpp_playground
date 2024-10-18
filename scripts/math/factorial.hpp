@@ -1,8 +1,6 @@
 #ifndef FACTORIAL_HPP
     #define FACTORIAL_HPP
 
-    #include <iostream>
-
     using namespace std;
 
     long long int factorial(int x){

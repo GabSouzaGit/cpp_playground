@@ -1,7 +1,6 @@
 #ifndef PRIME_NUMBERS_HPP
     #define PRIME_NUMBERS_HPP
 
-    #include <iostream>
     #include <vector>
 
     using namespace std;
