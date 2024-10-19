@@ -12,9 +12,8 @@
                     "main.cpp",
                     "greet.hpp",
 
-                // Insira aqui os arquivos e cabeçalhos que serão carregados pelo arquivo main.cpp
-                    // "scripts/caminho/example.cpp",
-                    // "scripts/caminho/example.hpp",
+                // Insira aqui os cabeçalhos que serão carregados pelo arquivo main.cpp
+                    // "src/caminho/example.hpp",
                     
                 "-o",
                 "output/instance"
