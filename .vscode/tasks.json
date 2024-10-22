@@ -11,6 +11,7 @@
                 // Arquivos compilados por padrão (não mexer, na boa ^_-)
                     "main.cpp",
                     "greet.hpp",
+                    "-I scripts",
 
                 // Insira aqui os cabeçalhos que serão carregados pelo arquivo main.cpp
                     // "src/caminho/example.hpp",
