@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int searchInsert(vector<int>& nums, int target) {
+int binary_search(vector<int>& nums, int target) {
     int start = 0;
     int middle = floor((nums.size() - 1) / 2);
     int last = nums.size() - 1;
