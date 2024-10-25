@@ -3,7 +3,7 @@
 
 Este repositório tem a finalidade de compreender melhor a linguagem **C++** e suas aplicações.
 
-Para isso, irei implementar diversas funções e objetos que realizarão diversas tarefas, seja desde um simples **reduce** à até um **backtracking**, e claro, a implementação de algoritmos vai ficando mais complexa a medida que compreendo melhor a linguagem (o que vai demorar um pouco pq to no básico kkk).
+Para isso, irei implementar diversas funções e objetos que realizarão diversas tarefas, seja desde um simples **reduce** à até um **backtracking**, e claro, a implementação de algoritmos vai ficando mais complexa a medida que compreendo melhor a linguagem.
 
 ## 🔌 Instalação e Execução
 Partindo do principio que você já tenha o `gcc` e o `g++` instalado, você pode pular esta parte do tutorial. Mas caso tenha duvidas de como instala-los, eu posso lhe ajudar!
@@ -80,11 +80,11 @@ A task está presente no diretório *.vscode*, em `tasks.json`:
                     // Arquivos compilados por padrão (não mexer, na boa ^_-)
                         "main.cpp",
                         "greet.hpp",
+                        "-I utils",
 
-                    // Insira aqui os arquivos e cabeçalhos que serão carregados pelo arquivo main.cpp
-                        // "scripts/caminho/example.cpp",
-                        // "scripts/caminho/example.hpp",
-                        
+                    // Insira aqui os cabeçalhos que serão carregados pelo arquivo main.cpp
+                        // "src/caminho/example.hpp",
+                        "src/backtracking/maze_resolver.hpp",
                     "-o",
                     "output/instance"
                 ],
