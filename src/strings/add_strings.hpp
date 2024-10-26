@@ -2,12 +2,9 @@
     #define ADD_STRINGS_HPP
 
     #include <string>
+    #include "../../utils/ctoi.hpp"
 
     using namespace std;
-
-    int ctoi(char c){
-        return c - '0';
-    }
 
     string add_strings(string num1, string num2) {
         string bigger = num1;

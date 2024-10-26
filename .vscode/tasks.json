@@ -15,7 +15,7 @@
 
                 // Insira aqui os cabeçalhos que serão carregados pelo arquivo main.cpp
                     // "src/caminho/example.hpp",
-                    "src/backtracking/maze_resolver.hpp",
+                    
                 "-o",
                 "output/instance"
             ],
