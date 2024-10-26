@@ -2,7 +2,6 @@
     #define UTILS_PRINT_MAP_HPP
 
     #include <map>
-    #include <vector>
     #include <iostream>
 
     using namespace std;
@@ -14,7 +13,7 @@
         for(it = dict.begin(); it != dict.end(); ++it){
             cout << "   " << it->first << ": " << it->second << endl;
         }
-        
+
         cout << "}" << endl;
     }
 
