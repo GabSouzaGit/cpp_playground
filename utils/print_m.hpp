@@ -11,7 +11,7 @@
         typename map<K, V>::iterator it;
         cout << "{" << endl;
         for(it = dict.begin(); it != dict.end(); ++it){
-            cout << "   " << it->first << ": " << it->second << endl;
+            cout << "   " << it->first << ": " << it->second << "," << endl;
         }
 
         cout << "}" << endl;
