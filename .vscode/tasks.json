@@ -2,8 +2,8 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "🔄 Compilar arquivos do playground (C++)",
-            "detail": "Compile todos os arquivos definidos na task.",
+            "label": "🔄 Compilar módulos C++ (playground)",
+            "detail": "Compile todos os módulos importados para a main.cpp.",
             "type": "shell",
             "command": "g++",
             "args": [
@@ -18,6 +18,27 @@
                     
                 "-o",
                 "output/instance"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "🗃️ Carregar projeto C++ (playground)",
+            "detail": "Carregar projeto especifico do repositório.",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g",
+                // Insira aqui o caminho para o projeto.
+                    // projects/example.cpp
+
+                "-o",
+                "output/project"
             ],
             "group": {
                 "kind": "build",

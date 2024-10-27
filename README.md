@@ -3,7 +3,9 @@
 
 Este repositório tem a finalidade de compreender melhor a linguagem **C++** e suas aplicações.
 
-Para isso, irei implementar diversas funções e objetos que realizarão diversas tarefas, seja desde um simples **reduce** à até um **backtracking**, e claro, a implementação de algoritmos vai ficando mais complexa a medida que compreendo melhor a linguagem.
+Para isso, irei implementar diversas funções, objetos e projetos que realizarão diversas tarefas, e a medida em que eu compreendo melhor a linguagem, mais complexas vão se tornando as implementações dos algoritmos.
+
+---
 
 ## 🔌 Instalação e Execução
 Partindo do principio que você já tenha o `gcc` e o `g++` instalado, você pode pular esta parte do tutorial. Mas caso tenha duvidas de como instala-los, eu posso lhe ajudar!
@@ -40,12 +42,12 @@ Agora, para inseri-la na variável de ambiente:
 Caso reste duvidas se a instalação foi feita com sucesso, abra o prompt de comando do Windows e digite `g++`. Se aparecer a seguinte mensagem:
 
 `g++: fatal error: no input files`
-`compilation terminated.`
+`compilation terminated`
 
 Isso indica que o compilador foi instalado e já está funcionando 👍.
 
+## 📍 Rodando localmente
 ---
-
 ### 📦 Importação do repositório
 Instale o cpp-playground no seu diretório desejado.
 
@@ -54,25 +56,39 @@ Instale o cpp-playground no seu diretório desejado.
     cd cpp_playground
 ```
 
-Dentro do repositório, há o arquivo `main.cpp`, onde ocorrem as importações e execuções dos módulos.
+Dentro do repositório, há os módulos e os projetos. Módulos são funções e classes que são importadas para a `main.cpp`, enquanto os projetos são códigos maiores e mais robustos, que são separados do arquivo principal.
 
 ---
 
 ### 📋 Para usuários do VSCode
 
-Caso não queira ter o trabalho de escrever todo o prompt toda vez que for compilar o código, eu deixei uma task do VSCode para te ajudar nisto.
+Caso não queira ter o trabalho de escrever todo o prompt toda vez que for compilar um código, eu deixei duas tasks do VSCode para te ajudar nisto.
 
-Basicamente, esta task contém toda a estrutura do prompt para compilação já feita, contendo por padrão já o código da `main.cpp` e as mensagens de boas vindas. Tudo o que ela vai precisar de fora são apenas os headers e as implementações adicionais que você importou para o código principal.
+Em resumo, o projeto contém tasks com toda a estrutura do prompt para compilação já feita, seja a compilação para projetos ou para módulos. A task por padrão já contém o código da `main.cpp`, as mensagens de boas vindas e os `utils` usados em todo o repositório. 
 
-A task está presente no diretório *.vscode*, em `tasks.json`:
+Tudo o que você vai precisar definir são apenas os módulos que você importou para o código principal ou o projeto que deseja executar.
+
+**As tasks estão presentes no diretório *.vscode*, em `tasks.json`:**
+
+---
+
+Para executar qualquer task, pressione **`Ctrl+Shift+B`**, e proximo da barra de pesquisa do VSCode, irão aparecer duas opções:
+
+**🔄 Compilar módulos C++ (playground)**: indicado caso queira usar módulos dentro da `main.cpp`. Apenas aponte o caminho dos módulos usados no arquivo principal. Ao compilar o programa, ele gerará um arquivo chamado `instance.exe`.  
+
+**🗃️ Carregar projeto C++ (playground)**: indicado caso queira executar um projeto separadamente. Apenas aponte o caminho do projeto. Ao compilar o programa, ele gerará um arquivo chamado `project.exe`.  
+
+**Em ambos os casos, o executável será criado dentro da pasta `/output`**
+
+---
 
 ```json
     {
         "version": "2.0.0",
         "tasks": [
             {
-                "label": "🔄 Compilar arquivos do playground (C++)",
-                "detail": "Compile todos os arquivos definidos na task.",
+                "label": "🔄 Compilar módulos C++ (playground)",
+                "detail": "Compile todos os módulos importados para a main.cpp.",
                 "type": "shell",
                 "command": "g++",
                 "args": [
@@ -84,9 +100,29 @@ A task está presente no diretório *.vscode*, em `tasks.json`:
 
                     // Insira aqui os cabeçalhos que serão carregados pelo arquivo main.cpp
                         // "src/caminho/example.hpp",
-                        "src/backtracking/maze_resolver.hpp",
+                        
                     "-o",
                     "output/instance"
+                ],
+                "group": {
+                    "kind": "build",
+                    "isDefault": false
+                },
+                "problemMatcher": [
+                    "$gcc"
+                ]
+            },
+            {
+                "label": "🗃️ Carregar projeto C++ (playground)",
+                "detail": "Carregar projeto especifico do repositório.",
+                "type": "shell",
+                "command": "g++",
+                "args": [
+                    // Insira aqui o caminho para o projeto.
+                        // projects/example.cpp
+
+                    "-o",
+                    "output/project"
                 ],
                 "group": {
                     "kind": "build",
@@ -99,10 +135,3 @@ A task está presente no diretório *.vscode*, em `tasks.json`:
         ]
     }
 ```
-
-Para executar a task, pressione `Ctrl+Shift+B`, e proximo da barra de pesquisa do VSCode, clique na opção escrita **🔄 Compilar arquivos do playground (C++)**.
-
-Ao compilar o programa, ele gerará um arquivo chamado `instance.exe`, dentro da pasta *output*, contendo um executável do programa.  
-
-
-    
