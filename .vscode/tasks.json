@@ -36,6 +36,7 @@
                 "-g",
                 // Insira aqui o caminho para o projeto.
                     // projects/example.cpp
+                "-I utils",
 
                 "-o",
                 "output/project"
