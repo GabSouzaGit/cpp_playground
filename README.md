@@ -76,7 +76,7 @@ Para executar qualquer task, pressione **`Ctrl+Shift+B`**, e proximo da barra de
 
 **🔄 Compilar módulos C++ (playground)**: indicado caso queira usar módulos dentro da `main.cpp`. Apenas aponte o caminho dos módulos usados no arquivo principal. Ao compilar o programa, ele gerará um arquivo chamado `instance.exe`.  
 
-**🗃️ Carregar projeto C++ (playground)**: indicado caso queira executar um projeto separadamente. Apenas aponte o caminho do projeto. Ao compilar o programa, ele gerará um arquivo chamado `project.exe`.  
+**🗃️ Carregar projeto C++ (playground)**: indicado caso queira executar um projeto separadamente. Apenas aponte o caminho para o código-fonte do projeto e seus cabeçalhos padrões. Ao compilar o programa, ele gerará um arquivo chamado `project.exe`.  
 
 **Em ambos os casos, o executável será criado dentro da pasta `/output`**
 
@@ -118,8 +118,12 @@ Para executar qualquer task, pressione **`Ctrl+Shift+B`**, e proximo da barra de
                 "type": "shell",
                 "command": "g++",
                 "args": [
-                    // Insira aqui o caminho para o projeto.
-                        // projects/example.cpp
+                    "-g",
+                    "-I utils",
+
+                    // Insira aqui o codigo-fonte do projeto e seus cabeçalhos.
+                        // "-I projects/example/libs",
+                        // "projects/example/main.cpp",
 
                     "-o",
                     "output/project"
