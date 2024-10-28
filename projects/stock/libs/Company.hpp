@@ -6,6 +6,8 @@
     #include <map>
 
     #include "../../../utils/string_to_upper.hpp"
+    #include "../../../utils/has_numbers.hpp"
+
     #include "Stock.hpp"
 
     using namespace std;
@@ -37,7 +39,7 @@
         public:
             Company(string name, string owner){
                 if(!string_to_upper(name)) throw CompanyError(0);
-                if(!string_to_upper(owner)) throw CompanyError(0);
+                if(has_numbers(owner) || !string_to_upper(owner)) throw CompanyError(0);
 
                 this->name = name;
                 this->owner = owner;
