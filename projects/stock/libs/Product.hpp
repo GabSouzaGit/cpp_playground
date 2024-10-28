@@ -13,7 +13,7 @@
         private:
             const vector<string> ERRORS = {
                 "Código acima do numero de digitos permitido.",
-                "Propriedade contendo caracteres unicode (UTF-8)",
+                "Propriedade do produto contendo caracteres inválidos (unicode, especiais, etc.).",
             };
 
             string message;
