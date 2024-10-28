@@ -7,7 +7,7 @@
 
     using namespace std;
 
-    bool is_simple_text(char32_t c){
+    bool is_simple_letter(char32_t c){
         const bool IN_UPPER_LETTERS_GROUP = c > 64 && c < 91;
         const bool IN_LOWER_LETTERS_GROUP = c > 96 && c < 123;
         const bool IS_SPACE = c == 32;

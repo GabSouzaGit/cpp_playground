@@ -3,15 +3,17 @@
 
     #include <string>
     #include <cctype>
+    #include "is_simple_letter.hpp"
 
     using namespace std;
 
-    string string_to_upper(string str){
+    bool string_to_upper(string& str){
         for(size_t i = 0; i < str.length(); i++){
+            if(!is_simple_letter(str[i])) return false;
             str[i] = toupper(str[i]);
         }
 
-        return str;
+        return true;
     }
 
 #endif
