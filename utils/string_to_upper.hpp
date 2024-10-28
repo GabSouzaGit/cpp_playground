@@ -1,5 +1,5 @@
-#ifndef STRING_TO_UPPER_HPP 
-    #define STRING_TO_UPPER_HPP
+#ifndef UTILS_STRING_TO_UPPER_HPP 
+    #define UTILS_STRING_TO_UPPER_HPP
 
     #include <string>
     #include <cctype>

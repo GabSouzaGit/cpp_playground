@@ -1,5 +1,5 @@
-#ifndef IS_SIMPLE_LETTER_HPP 
-    #define IS_SIMPLE_LETTER_HPP
+#ifndef UTILS_IS_SIMPLE_LETTER_HPP 
+    #define UTILS_IS_SIMPLE_LETTER_HPP
 
     #include <iostream>
     #include <string>

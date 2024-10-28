@@ -1,5 +1,5 @@
-#ifndef COMPLETE_LEFT_ZEROS_HPP 
-    #define COMPLETE_LEFT_ZEROS_HPP
+#ifndef UTILS_COMPLETE_LEFT_ZEROS_HPP 
+    #define UTILS_COMPLETE_LEFT_ZEROS_HPP
 
     #include <string>
     #include <cmath>
