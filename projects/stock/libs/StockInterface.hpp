@@ -40,12 +40,6 @@
                 }
                 
                 /* Inputs inline */
-                // Sobrecarga: atribuição de entrada de usuario em string.
-                void input(string message, string &locate){
-                    this->print(message);
-                    getline(cin, locate);
-                    cout << endl;
-                }
 
                 // Sobrecarga: atribuição de entrada de usuario para ponteiro dinâmico de string.
                 void input(string message, unique_ptr<string> &local_ptr){
@@ -57,15 +51,19 @@
 
                     cout << endl;
                 }
-            
-                /* Inputs multiline */
-                // Sobrecarga: atribuição de entrada de usuario em string.
-                void multiline_input(vector<string> lines, string &locate){
-                    multiline_print(lines);
-                    getline(cin, locate);
+
+                 // Sobrecarga: atribuição de entrada de usuario para ponteiro dinâmico de string.
+                void input(string message, unique_ptr<int> &local_ptr){
+                    string* temp_cin_value = new string;
+                    this->print(message);
+
+                    getline(cin, *temp_cin_value);
+                    local_ptr = make_unique<int>(stoi(*temp_cin_value));
+
                     cout << endl;
                 }
-
+            
+                /* Inputs multiline */
                 // Sobrecarga: atribuição de entrada de usuario para ponteiro dinâmico de string.
                 void multiline_input(vector<string> lines, unique_ptr<string> &local_ptr){
                     string* temp_cin_value = new string;
