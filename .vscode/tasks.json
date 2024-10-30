@@ -39,6 +39,8 @@
                 // Insira aqui o codigo-fonte do projeto e seus cabeçalhos.
                     // "-I projects/example/libs",
                     // "projects/example/main.cpp",
+                    "-I projects/stock/libs",
+                    "projects/stock/main.cpp",
 
                 "-o",
                 "output/project"

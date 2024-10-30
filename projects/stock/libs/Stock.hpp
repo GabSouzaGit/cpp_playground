@@ -40,7 +40,7 @@
 
             string name;
             string description;
-            map<string, Product> stock_core = {};
+            map<string, Product*> stock_core = {};
 
         public:
             Stock(string name, string description, int stock_limit){
