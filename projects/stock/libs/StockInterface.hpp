@@ -16,18 +16,18 @@
                     cout << message << endl;
                 }
 
-                void concat_print(vector<string> snippets){
-                    for(size_t i = 0; i < snippets.size(); i++){
-                        cout << snippets[i];
+                // Sobrecarga: multiplicação de caractere
+                void print(char c, int x){
+                    for(int i = 0; i < x; i++){
+                        cout << c;
                     }
 
                     cout << endl;
                 }
 
-                // Sobrecarga: multiplicação de caractere
-                void print(char c, int x){
-                    for(int i = 0; i < x; i++){
-                        cout << c;
+                void concat_print(vector<string> snippets){
+                    for(size_t i = 0; i < snippets.size(); i++){
+                        cout << snippets[i];
                     }
 
                     cout << endl;
@@ -40,8 +40,7 @@
                 }
                 
                 /* Inputs inline */
-
-                // Sobrecarga: atribuição de entrada de usuario para ponteiro dinâmico de string.
+                // Sobrecarga: ponteiro string.
                 void input(string message, unique_ptr<string> &local_ptr){
                     string* temp_cin_value = new string;
                     this->print(message);
@@ -52,7 +51,7 @@
                     cout << endl;
                 }
 
-                 // Sobrecarga: atribuição de entrada de usuario para ponteiro dinâmico de string.
+                 // Sobrecarga: ponteiro inteiro.
                 void input(string message, unique_ptr<int> &local_ptr){
                     string* temp_cin_value = new string;
                     this->print(message);
@@ -64,7 +63,7 @@
                 }
             
                 /* Inputs multiline */
-                // Sobrecarga: atribuição de entrada de usuario para ponteiro dinâmico de string.
+                // Sobrecarga: ponteiro string.
                 void multiline_input(vector<string> lines, unique_ptr<string> &local_ptr){
                     string* temp_cin_value = new string;
                     this->multiline_print(lines);
@@ -75,7 +74,7 @@
                     cout << endl;
                 }
 
-                // Sobrecarga: atribuição de entrada de usuario para ponteiro dinâmico de inteiro.
+                // Sobrecarga: ponteiro inteiro.
                 void multiline_input(vector<string> lines, unique_ptr<int> &local_ptr){
                     string* temp_cin_value = new string;
                     this->multiline_print(lines);
