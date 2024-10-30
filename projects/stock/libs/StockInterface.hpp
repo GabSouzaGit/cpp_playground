@@ -34,8 +34,6 @@
                 }
 
                 void multiline_print(vector<string> lines){
-
-                    
                     for(size_t i = 0; i < lines.size(); i++){
                         cout << lines[i] << endl;
                     }
