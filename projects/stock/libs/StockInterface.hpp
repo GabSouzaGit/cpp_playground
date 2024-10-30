@@ -15,22 +15,24 @@
         class System {
             private:
                 // PROCEDIMENTOS DE SESSÃO 
-                void exit(){
+                SessionProcedure exit = []() -> void {
 
-                }
+                };
 
-                void visualize_stocks(){
+                SessionProcedure visualize_stocks = []() -> void {
 
-                }
+                };
 
-                void visualize_profile(){
-                    
-                }
+                SessionProcedure visualize_profile = []() -> void {
+
+                };
 
                 /* * */
 
                 const vector<SessionProcedure> SESSION_PROCEDURES = {
-
+                    this->exit,
+                    this->visualize_stocks,
+                    this->visualize_profile
                 };
 
                 /* Prints */
@@ -154,6 +156,7 @@
                 System(){}
                 void boot(){
                     User* user = this->user_register();
+                    this->start_session(user);
                 }
         };
     };
