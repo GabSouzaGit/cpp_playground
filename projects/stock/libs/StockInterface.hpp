@@ -2,14 +2,37 @@
     #define PROJECT_STOCK_INTERFACE_HPP
 
     #include <vector>
+    #include <iostream>
 
     #include "Product.hpp"
     #include "Stock.hpp"
     #include "User.hpp"
 
     namespace StockInterface {
+
+        using SessionProcedure = void(*)();
+
         class System {
             private:
+                // PROCEDIMENTOS DE SESSÃO 
+                void exit(){
+
+                }
+
+                void visualize_stocks(){
+
+                }
+
+                void visualize_profile(){
+                    
+                }
+
+                /* * */
+
+                const vector<SessionProcedure> SESSION_PROCEDURES = {
+
+                };
+
                 /* Prints */
                 // Sobrecarga: string comum
                 void print(string message){
@@ -39,8 +62,6 @@
                     }
                 }
                 
-                /* Inputs inline */
-                // Sobrecarga: ponteiro string.
                 void input(string message, unique_ptr<string> &local_ptr){
                     string* temp_cin_value = new string;
                     this->print(message);
@@ -51,36 +72,12 @@
                     cout << endl;
                 }
 
-                 // Sobrecarga: ponteiro inteiro.
-                void input(string message, unique_ptr<int> &local_ptr){
-                    string* temp_cin_value = new string;
-                    this->print(message);
-
-                    getline(cin, *temp_cin_value);
-                    local_ptr = make_unique<int>(stoi(*temp_cin_value));
-
-                    cout << endl;
-                }
-            
-                /* Inputs multiline */
-                // Sobrecarga: ponteiro string.
                 void multiline_input(vector<string> lines, unique_ptr<string> &local_ptr){
                     string* temp_cin_value = new string;
                     this->multiline_print(lines);
 
                     getline(cin, *temp_cin_value);
                     local_ptr = make_unique<string>(*temp_cin_value);
-
-                    cout << endl;
-                }
-
-                // Sobrecarga: ponteiro inteiro.
-                void multiline_input(vector<string> lines, unique_ptr<int> &local_ptr){
-                    string* temp_cin_value = new string;
-                    this->multiline_print(lines);
-
-                    getline(cin, *temp_cin_value);
-                    local_ptr = make_unique<int>(stoi(*temp_cin_value));
 
                     cout << endl;
                 }
@@ -127,6 +124,30 @@
                     }
 
                     return u;
+                }
+
+                void start_session(User* user){
+                    bool running = true;
+
+                    concat_print({"SEJA BEM VINDO, ", user->get_username(), "!"});
+                    print('-', 20);
+
+                    while(running){
+                        unique_ptr<string> opt;
+
+                        try {
+                            multiline_input({
+                                "1 - Acessar estoques disponiveis",
+                                "2 - Visualizar perfil",
+                                "",
+                                "0 - Sair"
+                            }, opt);
+
+                            this->SESSION_PROCEDURES[stoi(opt->data())]();
+                        }catch(out_of_range e){
+                            this->print("Digite apenas um dos valores disponiveis para prosseguir.");
+                        }
+                    }
                 }          
             
             public:
