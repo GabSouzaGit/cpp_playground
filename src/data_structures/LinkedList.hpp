@@ -67,17 +67,17 @@
                     return;
                 }
 
-            Node<T>* current = this->tail;
-            while(true){
-                    if(current->next == nullptr){
-                        current->next = new Node<T>(value, nullptr);
-                        this->head = current;
+                Node<T>* current = this->tail;
+                while(true){
+                        if(current->next == nullptr){
+                            current->next = new Node<T>(value, nullptr);
+                            this->head = current;
 
-                        return;
-                    }
+                            return;
+                        }
 
-                    current = current->next;
-            }
+                        current = current->next;
+                }
             }
 
             void remove_at_begin(){
