@@ -24,8 +24,18 @@
 
     template<typename T> class LinkedList {
         private:
+            int size = 0;
+
             Node<T>* head = nullptr;
             Node<T>* tail = nullptr;
+
+            void increment_size(){
+                this->size++;
+            }
+
+            void decrement_size(){
+                this->size--;
+            }
 
         public:
             LinkedList(){}
@@ -34,6 +44,8 @@
             }
 
             void insert_at_begin(T value){
+                this->increment_size();
+
                 if(this->head  == nullptr){
                     this->head = new Node<T>(value, nullptr);
                     return;
@@ -48,6 +60,8 @@
             }
 
             void insert_at_end(T value){
+                this->increment_size();
+
                 if(this->head == nullptr){
                     this->head = new Node<T>(value);
                     return;
@@ -58,11 +72,35 @@
                     if(current->next == nullptr){
                         current->next = new Node<T>(value, nullptr);
                         this->head = current;
+
                         return;
                     }
 
                     current = current->next;
             }
+            }
+
+            void remove_at_begin(){
+                this->tail = this->tail->next;
+                this->decrement_size();
+            }
+
+            void remove_at_end(){
+                Node<T>* current = this->tail;
+
+                while(true){
+                    if(current->next->next == nullptr){
+                        this->head = current;
+
+                        delete this->head->next;
+                        this->head->next = nullptr;
+
+                        this->decrement_size();
+                        return;
+                    }
+
+                    current = current->next;
+                }
             }
 
             Node<T>* get_tail(){
@@ -73,13 +111,17 @@
                 return this->head;
             }
 
+            int length(){
+                return this->size;
+            }
+
             void display(){
                 cout << "[ ";
 
                 Node<T>* current = this->tail;
                 while(true){
                     if(current->next == nullptr){
-                        cout << current->value << " => null ]";
+                        cout << current->value << " => null ]" << endl;
                         return;
                     }
 
