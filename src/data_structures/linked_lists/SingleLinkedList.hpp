@@ -1,5 +1,5 @@
-#ifndef LINKED_LIST_HPP
-    #define LINKED_LIST_HPP
+#ifndef SINGLE_LINKED_LIST_HPP
+    #define SINGLE_LINKED_LIST_HPP
 
     #include <iostream>
 
@@ -40,8 +40,8 @@
             }
 
         public:
-            LinkedList(){}
-            LinkedList(T value){
+            SingleLinkedList(){}
+            SingleLinkedList(T value){
                 this->head = new Node<T>(value);
             }
 
