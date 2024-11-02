@@ -29,10 +29,12 @@
             Node<T>* head = nullptr;
             Node<T>* tail = nullptr;
 
+            // Acrescenta mais uma unidade de tamanho à lista encadeada.
             void increment_size(){
                 this->size++;
             }
 
+            // Decresce menos uma unidade de tamanho à lista encadeada.
             void decrement_size(){
                 this->size--;
             }
@@ -43,6 +45,7 @@
                 this->head = new Node<T>(value);
             }
 
+            // Insere um novo valor no inicio da lista.
             void insert_at_begin(T value){
                 this->increment_size();
 
@@ -59,6 +62,7 @@
                 this->tail = new Node<T>(value, this->tail);
             }
 
+            // Insere um novo valor no fim da lista.
             void insert_at_end(T value){
                 this->increment_size();
 
@@ -80,11 +84,13 @@
                 }
             }
 
+            // Remove o valor localizado no inicio da lista.
             void remove_at_begin(){
                 this->tail = this->tail->next;
                 this->decrement_size();
             }
 
+            // Remove o valor localizado no fim da lista.
             void remove_at_end(){
                 Node<T>* current = this->tail;
 
@@ -103,18 +109,22 @@
                 }
             }
 
+            // Retorna o primeiro elemento da lista.
             Node<T>* get_tail(){
                 return this->tail;
             }
 
+            // Retorna o ultimo elemento da lista.
             Node<T>* get_head(){
                 return this->head;
             }
 
+            // Retorna o tamanho atual da lista.
             int length(){
                 return this->size;
             }
 
+            // Exibe na tela do console a lista encadeada em forma de texto.
             void display(){
                 cout << "[ ";
 
