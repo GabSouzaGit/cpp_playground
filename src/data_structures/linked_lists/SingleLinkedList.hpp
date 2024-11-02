@@ -22,7 +22,7 @@
             }
     };
 
-    template<typename T> class LinkedList {
+    template<typename T> class SingleLinkedList {
         private:
             int size = 0;
 
